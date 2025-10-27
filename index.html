@@ -1,64 +1,208 @@
-<!DOCTYPE html>
+<!--
+  OJ Infra - Single-page static website
+  - Theme: white background with yellow/orange accents
+  - Place your images (logo & project photos) in /assets/images/
+  - Replace placeholder images with the images extracted from your brochure PDF
+  - To use: save this file as index.html and upload to GitHub repo named <yourgithub>.github.io
+-->
+
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OJ Infra | Construction | Interiors | Highways</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>OJ Infra — Construction | Interiors | Highways</title>
+  <meta name="description" content="OJ Infra — Construction, Interiors, Roads & Highways. Contact: +91 96891 23003" />
+
+  <style>
+    :root{
+      --brand:#f39c12; /* yellow/orange */
+      --dark:#0b1a2b;
+      --muted:#666;
+      --maxw:1100px;
+      --radius:8px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,Segoe UI,system-ui,Roboto,Arial,sans-serif;margin:0;color:var(--dark);background:#fff}
+    a{color:var(--brand);text-decoration:none}
+    header{background:linear-gradient(90deg,rgba(243,156,18,0.12),rgba(243,156,18,0.05));padding:28px 16px;border-bottom:1px solid rgba(11,26,43,0.04)}
+    .container{max-width:var(--maxw);margin:0 auto;padding:0 16px}
+
+    .topbar{display:flex;align-items:center;gap:20px}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo img{height:56px;width:auto;border-radius:6px}
+    .brand{font-weight:700;color:var(--dark);font-size:20px}
+    .tag{font-size:13px;color:var(--muted)}
+    nav{margin-left:auto}
+    nav a{margin-left:18px;font-weight:600}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;padding:48px 0}
+    .hero h1{font-size:34px;margin:0 0 12px}
+    .hero p{margin:0 0 18px;color:var(--muted)}
+    .cta{display:inline-block;background:var(--brand);color:#fff;padding:12px 18px;border-radius:8px;font-weight:700}
+
+    .card{background:#fff;border-radius:12px;padding:18px;box-shadow:0 6px 18px rgba(11,26,43,0.06);}
+    .stats{display:flex;gap:12px}
+    .stat{flex:1;text-align:center}
+    .stat h3{margin:0;color:var(--brand)}
+
+    section{padding:36px 0}
+    h2{font-size:22px;margin-bottom:14px;color:var(--dark)}
+    p.lead{color:var(--muted);max-width:820px}
+
+    .services{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}
+    .service{background:linear-gradient(180deg,#fff,#fff);border-left:6px solid var(--brand);padding:14px;border-radius:10px}
+    .service h3{margin:0 0 8px}
+
+    .projects-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .proj{position:relative;border-radius:10px;overflow:hidden}
+    .proj img{width:100%;height:200px;object-fit:cover;display:block}
+    .proj .meta{position:absolute;left:12px;bottom:12px;background:rgba(0,0,0,0.45);color:#fff;padding:8px 10px;border-radius:6px;font-size:14px}
+
+    .contact{display:flex;gap:24px;align-items:flex-start}
+    .contact .left{flex:1}
+    .contact .right{width:320px}
+    .contact .field{margin-bottom:12px}
+    .btn{background:var(--brand);color:#fff;padding:10px 14px;border-radius:8px;border:0;cursor:pointer}
+
+    footer{background:#07101a;color:#fff;padding:18px 0;margin-top:20px;text-align:center}
+
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .projects-grid{grid-template-columns:repeat(2,1fr)}
+      nav{display:none}
+    }
+    @media(max-width:560px){
+      .projects-grid{grid-template-columns:1fr}
+    }
+  </style>
 </head>
 <body>
   <header>
-    <h1>OJ INFRA</h1>
-    <p>Your Vision.. Our Expertise</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <div class="container topbar">
+      <div class="logo">
+        <!-- Replace assets/images/logo.png with the logo extracted from your PDF -->
+        <img src="assets/images/logo.png" alt="OJ Infra Logo" onerror="this.style.display='none'" />
+        <div>
+          <div class="brand">OJ INFRA</div>
+          <div class="tag">Construction • Interiors • Roads & Highways</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
   </header>
 
-  <section id="about">
-    <h2>Who We Are</h2>
-    <p>
-      Founded by Mr. Omkar Jadhav, OJ Infra is a dynamic and rapidly growing company 
-      specializing in Construction, Interior & Exterior Design, and Highway Contracting. 
-      With a commitment to excellence, innovation, and timely delivery, we turn visions into reality 
-      through quality craftsmanship and engineering expertise.
-    </p>
-  </section>
+  <main class="container">
+    <section class="hero">
+      <div>
+        <h1>Building the future, brick by brick.</h1>
+        <p class="lead">OJ Infra is a trusted construction and infrastructure partner — delivering high-quality projects in roads, highways, interiors, and commercial construction across India. Founded by Mr. Omkar Jadhav, we combine modern engineering with reliable execution.</p>
+        <a class="cta" href="#contact">Get in touch</a>
 
-  <section id="services">
-    <h2>Our Services</h2>
-    <div class="service">
-      <h3>Construction</h3>
-      <p>Residential, commercial, and industrial projects from concept to completion — ensuring long-term value and quality.</p>
-    </div>
-    <div class="service">
-      <h3>Interiors & Exteriors</h3>
-      <p>Creative, functional, and aesthetic designs for homes, offices, and all types of exteriors.</p>
-    </div>
-    <div class="service">
-      <h3>Roads & Highways</h3>
-      <p>Trusted contractors delivering durable and efficient road and highway infrastructure across India.</p>
-    </div>
-  </section>
+        <div style="margin-top:20px;display:flex;gap:12px;">
+          <div class="card" style="flex:1">
+            <div style="font-size:13px;color:var(--muted)">Head Office</div>
+            <b>47/2, Shri Krishna Kunj, Vasantnagar, Baramati, Pune - 413102</b>
+          </div>
+          <div class="card" style="width:220px;text-align:center">
+            <div style="font-size:13px;color:var(--muted)">Contact</div>
+            <b>+91 96891 23003</b>
+            <div style="font-size:13px;color:var(--muted)">ojinfra@gmail.com</div>
+          </div>
+        </div>
+      </div>
 
-  <section id="vision">
-    <h2>Our Vision & Mission</h2>
-    <p>To be a leading infrastructure and construction company known for delivering excellence, 
-       embracing innovation, and creating sustainable value.</p>
-    <ul>
-      <li>Deliver high-quality solutions</li>
-      <li>Complete projects on time and within budget</li>
-      <li>Build lasting relationships through trust and transparency</li>
-    </ul>
-  </section>
+      <div>
+        <div class="card" style="text-align:center">
+          <!-- Replace assets/images/hero.jpg with a construction-themed image -->
+          <img src="assets/images/hero.jpg" alt="Construction" style="width:100%;height:220px;object-fit:cover;border-radius:8px;margin-bottom:12px" onerror="this.style.display='none'"/>
+          <div style="font-weight:700;color:var(--brand)">Trusted Contractors for Infrastructure Projects</div>
+          <div style="color:var(--muted);font-size:14px">Roads, Highways, Bridges & Commercial Construction</div>
+        </div>
+      </div>
+    </section>
 
-  <footer id="contact">
-    <h2>Contact Us</h2>
-    <p><strong>Head Office:</strong> 47/2, Shri Krishna Kunj, Vasantnagar, Baramati, Dist Pune – 413102</p>
-    <p><strong>Phone:</strong> +91 96891 23003  |  <strong>Email:</strong> ojinfra@gmail.com</p>
-    <p>© 2025 OJ Infra – Building the Future, Brick by Brick.</p>
+    <section id="about">
+      <h2>Who We Are</h2>
+      <p class="lead">At OJ Infra, we believe infrastructure is the backbone of progress. Our multidisciplinary team delivers residential, commercial, and industrial projects with a commitment to safety, quality, and timely delivery.</p>
+    </section>
+
+    <section id="services">
+      <h2>Our Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3>Construction</h3>
+          <p>Bridge & building construction, machinery & equipment operations — from concept to completion with structural integrity and sustainable practices.</p>
+        </div>
+        <div class="service">
+          <h3>Interiors & Exteriors</h3>
+          <p>Residential and commercial interiors, facades, and exterior finishes that blend aesthetics with functionality.</p>
+        </div>
+        <div class="service">
+          <h3>Roads & Highways</h3>
+          <p>Morrum dumping, spreading, grading, compacting, embankments, and highway contracting to build durable infrastructure.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2>Projects</h2>
+      <p class="lead">Some of our ongoing and completed works — roads, commercial projects, and interior transformations.</p>
+
+      <div class="projects-grid" style="margin-top:12px">
+        <div class="proj">
+          <img src="assets/images/proj1.jpg" alt="Project 1" />
+          <div class="meta">Road & Highway</div>
+        </div>
+        <div class="proj">
+          <img src="assets/images/proj2.jpg" alt="Project 2" />
+          <div class="meta">Bridge Construction</div>
+        </div>
+        <div class="proj">
+          <img src="assets/images/proj3.jpg" alt="Project 3" />
+          <div class="meta">Interior Works</div>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="vision">
+      <h2>Vision & Mission</h2>
+      <p class="lead">To be a leading infrastructure company known for excellence, innovation, and creating sustainable value. We aim to deliver high-quality, on-time projects while fostering long-term client relationships.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <div class="contact">
+        <div class="left">
+          <p><strong>Head Office:</strong> 47/2, Shri Krishna Kunj, Vasantnagar, Baramati, Dist. Pune — 413102</p>
+          <p><strong>Phone:</strong> +91 96891 23003</p>
+          <p><strong>Email:</strong> ojinfra@gmail.com</p>
+          <p class="lead">For enquiries and project discussions, get in touch with our team.</p>
+        </div>
+        <div class="right card">
+          <form onsubmit="alert('Thank you! We will contact you.');return false;">
+            <div class="field"><input type="text" placeholder="Your name" required style="width:100%;padding:10px;border-radius:6px;border:1px solid #ddd" /></div>
+            <div class="field"><input type="email" placeholder="Your email" required style="width:100%;padding:10px;border-radius:6px;border:1px solid #ddd" /></div>
+            <div class="field"><textarea placeholder="Message" rows="4" style="width:100%;padding:10px;border-radius:6px;border:1px solid #ddd"></textarea></div>
+            <button class="btn" type="submit">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="container">
+      © 2025 OJ Infra — Building the Future, Brick by Brick. | +91 96891 23003 | ojinfra@gmail.com
+    </div>
   </footer>
+
 </body>
 </html>
